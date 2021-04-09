@@ -4,6 +4,7 @@ from datetime import datetime
 import os
 import sys
 
+
 # define a variable to hold your app
 app = Flask(__name__)
 
@@ -20,3 +21,5 @@ def get_time():
 if __name__=='__main__':
     app.run(use_reloader=True)
     print('server running')
+    print('hello')
+
