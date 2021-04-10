@@ -1,0 +1,8 @@
+Hugging Face Blog:
+https://huggingface.co/blog/how-to-generate
+
+Fine tuning T5 Transformer for a Summarization Task:
+https://towardsdatascience.com/fine-tuning-a-t5-transformer-for-any-summarization-task-82334c64c81
+
+Applying transformers to any length of text:
+https://towardsdatascience.com/how-to-apply-transformers-to-any-length-of-text-a5601410af7f
