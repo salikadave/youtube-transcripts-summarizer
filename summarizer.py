@@ -1,6 +1,7 @@
 # YouTube API
 from youtube_transcript_api import YouTubeTranscriptApi
 import json
+from transformers import pipeline
 
 
 # Return transcripts from Video ID
@@ -20,7 +21,21 @@ def fetch_video_transcripts(video_id):
     except:
         return 'Transcripts not found!'
     
+# convert transcript to abstractive summary
+def transcript_to_summary(video_transcript):
+    # using pipeline API for summarization task
+    summarization = pipeline("summarization")
+    summary_text = summarization(video_transcript)[0]['summary_text']
+    print("Summary:", summary_text)
 
 
-video_id = "emBoDloCze8"
-transcript = fetch_video_transcripts(video_id)
+
+transcipts_under_1024 = ["NiKtZgImdlY","_Nq4Z5i7lcs","ZyYqyYAKGC0","yj8sAnZ6c3g"]
+transcript = fetch_video_transcripts(transcipts_under_1024[3])
+print("="*50)
+transcript_to_summary(transcript)
+
+
+
+
+
