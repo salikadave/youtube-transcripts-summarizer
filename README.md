@@ -1,5 +1,9 @@
 ## Youtube Transcripts Summarizer
 
+## Datasets:
+
+* [Kaggle TED Talk Transcripts & TED Data Analysis](https://www.kaggle.com/rounakbanik/ted-data-analysis/?select=transcripts.csv)
+
 ## Running this project:
 ### Windows: 
 
