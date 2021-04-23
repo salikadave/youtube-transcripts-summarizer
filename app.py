@@ -5,12 +5,14 @@ import os
 import sys
 import json
 from flask import make_response
+from flask_cors import CORS
 # Import Custom Module
 import summarizer
 
 
 # define a variable to hold your app
 app = Flask(__name__)
+CORS(app)
 
 # define your resource endpoints
 @app.route('/')
@@ -26,7 +28,7 @@ def perform_summarization():
     youtube_url = request.args.get('youtube')
     video_id = youtube_url.split("=")
     video_transcript = summarizer.fetch_video_transcripts(video_id[1])
-    transcript_summary = summarizer.transcript_to_summary(video_transcript)
+    transcript_summary = summarizer.transcript_to_summary_pipeline(video_transcript)
     return json.dumps(transcript_summary, indent = 4)
     # return json.dumps(video_url,indent=4)
 
