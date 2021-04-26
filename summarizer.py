@@ -44,7 +44,7 @@ def transcript_to_summary_t5(video_transcript):
     print(tokenizer.decode(outputs[0]))
 
 # Sample
-# transcipts_under_1024 = ["NiKtZgImdlY","_Nq4Z5i7lcs","ZyYqyYAKGC0","yj8sAnZ6c3g","1K5SycZjGhI"]
+# transcipts_under_1024 = ["NiKtZgImdlY","_Nq4Z5i7lcs","ZyYqyYAKGC0","yj8sAnZ6c3g","1K5SycZjGhI","1o4mJdt4TzA"]
 # transcript = fetch_video_transcripts(transcipts_under_1024[1])
 # print("="*50)
 # # transcript_to_summary_pipeline(transcript)
