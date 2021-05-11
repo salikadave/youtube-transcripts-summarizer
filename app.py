@@ -7,7 +7,9 @@ import json
 from flask import make_response
 from flask_cors import CORS
 # Import Custom Module
-import summarizer
+# import summarizer
+# import bart_init
+import bart_summarizer
 
 
 # define a variable to hold your app
@@ -31,6 +33,18 @@ def perform_summarization():
     transcript_summary = summarizer.transcript_to_summary_pipeline(video_transcript)
     return json.dumps(transcript_summary, indent = 4)
     # return json.dumps(video_url,indent=4)
+
+@app.route('/api/bart', methods=["GET"])
+def perform_bart_summary():
+    youtube_url = request.args.get('youtube')
+    video_id = youtube_url.split("=")
+    # video_transcript = summarizer.fetch_video_transcripts(video_id[1])
+    transcript_summary, time = bart_summarizer.begin_summary_generation(video_id[1])
+    content = {
+        "summary": transcript_summary,
+        "time_taken": time
+    }
+    return json.dumps(content, indent = 4)
 
 @app.errorhandler(404)
 def not_found(error):
