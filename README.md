@@ -1,5 +1,7 @@
 ## Youtube Transcripts Summarizer
 
+Chrome Extension for the summarizer [here:](https://github.com/salikadave/youtube-transcripts-summarizer-extension)
+
 ## Datasets:
 
 * [Kaggle TED Talk Transcripts & TED Data Analysis](https://www.kaggle.com/rounakbanik/ted-data-analysis/?select=transcripts.csv)
